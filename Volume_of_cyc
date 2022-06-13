@@ -1,0 +1,16 @@
+$radius=10
+class Cyc()
+    
+    
+    def initialize(h)
+        @h=h
+    end
+    
+    def volume()
+        volume=2*3.14*$radius+@h
+        puts volume
+    end
+end
+
+res=Cyc.new()
+res.volume(10)
