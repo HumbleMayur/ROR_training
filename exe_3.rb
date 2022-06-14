@@ -1,22 +1,15 @@
-class Student_details
-    def initialize(name,roll_no,marks)
-        @name=name
-        @roll_no=roll_no
-        @marks=marks
+class Students
+
+    def Percentage(namearr)
+        for i in 0..namearr.length() do
+            puts "#{namearr[i][:name]} #{namearr[i][:marks]} %"
+            
+        end
     end
-    def Name()
-        hash_variable = {
-        "Name" => @name, 
-        "Roll No" =>@roll_no, 
-        "Marks" => @marks
-            }
-        puts hash_variable
-        puts "#{@marks} Perectage"
-                
-    end
-    
 end
 
-res=Student_details.new('mk',10,45)
+namearr=[{:name=>'mayur',:roll_no=>15,:marks=>80},{:name=>'ramu',:roll_no=>16,:marks=>19},{:name=>'dj',:roll_no=>17,:marks=>88},
+{:name=>'rr',:roll_no=>19,:marks=>33}]
 
-res.Name()
+res=Students.new()
+res.Percentage(namearr)

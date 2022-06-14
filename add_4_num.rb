@@ -1,5 +1,5 @@
 $num1=5
-class Sum
+class Sum()
     @@num3=5
     
     def initialize(num2)
