@@ -1,6 +1,7 @@
-require 'modules/wordcount'
+require 'modules/Wordcount'
 class Post < ApplicationRecord
     include Wordcount
+#    include badword
     validates :title, :body, :status, presence: true
     validates :title, length: { maximum: 50 }
     validates :body, length: { maximum: 200 }
@@ -21,9 +22,10 @@ class Post < ApplicationRecord
     def assign_status
         self.status = STATUS[0]
     end
-    validate :total_draft_posts, on: :create
-    def total_draft_posts
-    # errors.add(:status, "to many draft posts") if abc
+    validate :check_bad, on: :save
+    def check_bad
+        puts check_bad
+        errors.add(:title, "gives bad words") if is_bad
     end
     
 
